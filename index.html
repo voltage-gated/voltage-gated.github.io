@@ -1,46 +1,74 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Game Localization Projects</title>
-  <meta name="description" content="Game localization projects and release resources.">
+  <title>voltage-gated</title>
   <style>
-    :root { color-scheme: light; --ink: #1f2933; --muted: #667085; --line: #d9dee7; --panel: #f7f8fa; --link: #175cd3; }
+    :root { --ink: #222; --muted: #777; --line: #e3e3e3; --link: #1a5fb4; }
     * { box-sizing: border-box; }
-    body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif; }
-    main { width: min(920px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 96px; }
-    h1, h2, p { margin-top: 0; }
-    h1 { margin-bottom: 12px; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.04em; }
-    h2 { margin: 0 0 16px; font-size: 1.15rem; }
-    .lede { max-width: 620px; color: var(--muted); }
-    .section { margin-top: 56px; }
-    .card { border: 1px solid var(--line); border-radius: 12px; padding: 24px; background: var(--panel); }
-    .card h2 { margin-bottom: 6px; }
-    .meta { margin: 0 0 18px; color: var(--muted); }
+    body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.6 "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
+    main { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 80px; }
+    h1 { margin: 0 0 40px; font-size: 1.6rem; }
+    h2 { margin: 40px 0 8px; font-size: 1rem; color: var(--muted); font-weight: normal; }
+    ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+    li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .title { flex: 1 1 280px; font-weight: bold; }
+    .sys { color: var(--muted); font-weight: normal; margin-left: 6px; font-size: .9rem; }
+    .ver { color: var(--muted); font-size: .9rem; min-width: 150px; }
+    .links a { margin-left: 12px; }
+    .links a:first-child { margin-left: 0; }
+    @media (max-width: 600px) { .title { flex-basis: 100%; } .ver { min-width: 0; } }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    footer { margin-top: 64px; color: var(--muted); font-size: .9rem; }
   </style>
 </head>
 <body>
   <main>
-    <header>
-      <h1>Game Localization Projects</h1>
-      <p class="lede">A compact index of game localization projects and release resources.</p>
-    </header>
+    <h1>voltage-gated</h1>
 
-    <section class="section" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <article class="card">
-        <h2><a href="one-piece-grand-battle-wsc.html">From TV Animation One Piece: Grand Battle Swan Colosseum</a></h2>
-        <p class="meta">WonderSwan Color · Mark 53</p>
-        <p>Information, compatibility data, checksums, and release downloads.</p>
-        <a href="https://github.com/voltage-gated/voltage-gated.github.io/releases/tag/mark53">View release</a>
-      </article>
-    </section>
+    <h2>한글패치</h2>
+    <ul>
+      <li>
+        <span class="title">검용전설 야이바<span class="sys">SFC</span></span>
+        <span class="ver">MARK81 · 2026-11-25</span>
+        <span class="links"><a href="https://github.com/voltage-gated/yaiba-sfc/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/yaiba-sfc">저장소</a></span>
+      </li>
+      <li>
+        <span class="title">마이티 모핀 파워레인저: 파이팅 에디션<span class="sys">SNES</span></span>
+        <span class="ver">MARK5 · 2026-11-20</span>
+        <span class="links"><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes">저장소</a></span>
+      </li>
+      <li>
+        <span class="title">원피스 그랜드배틀 스완 콜로세움<span class="sys">WSC</span></span>
+        <span class="ver">MARK106 · 2026-10-10</span>
+        <span class="links"><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc">저장소</a></span>
+      </li>
+      <li>
+        <span class="title">B-WINGS<span class="sys">NES</span></span>
+        <span class="ver">MARK7 · 2026-10-01</span>
+        <span class="links"><a href="https://github.com/voltage-gated/b-wings-nes/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/b-wings-nes">저장소</a></span>
+      </li>
+      <li>
+        <span class="title">배틀시티<span class="sys">NES</span></span>
+        <span class="ver">MARK32 · 2026-09-09</span>
+        <span class="links"><a href="https://github.com/voltage-gated/battle-city-nes/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/battle-city-nes">저장소</a></span>
+      </li>
+      <li>
+        <span class="title">유유백서: 마강통일전<span class="sys">MD</span></span>
+        <span class="ver">MARK94 · 2026-08-26</span>
+        <span class="links"><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md">저장소</a></span>
+      </li>
+    </ul>
 
-    <footer>Additional projects will be listed here as releases become available.</footer>
+    <h2>프로그램</h2>
+    <ul>
+      <li>
+        <span class="title">AI 사용량 위젯<span class="sys">Windows</span></span>
+        <span class="ver">V5 · 2026-11-20</span>
+        <span class="links"><a href="https://github.com/voltage-gated/ai-usage-widgets/releases/latest">다운로드</a><a href="https://github.com/voltage-gated/ai-usage-widgets">저장소</a></span>
+      </li>
+    </ul>
   </main>
 </body>
 </html>
