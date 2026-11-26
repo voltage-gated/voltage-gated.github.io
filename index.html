@@ -4,71 +4,101 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>voltage-gated</title>
+  <meta name="description" content="레트로 게임 한글패치와 작은 프로그램을 만들어 올리는 곳입니다.">
   <style>
-    :root { --ink: #222; --muted: #777; --line: #e3e3e3; --link: #1a5fb4; }
+    :root { --ink: #222; --muted: #777; --line: #e3e3e3; --link: #1a5fb4; --screen: #111; }
     * { box-sizing: border-box; }
     body { margin: 0; background: #fff; color: var(--ink); font: 16px/1.6 "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif; }
-    main { width: min(760px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 80px; }
-    h1 { margin: 0 0 40px; font-size: 1.6rem; }
-    h2 { margin: 40px 0 8px; font-size: 1rem; color: var(--muted); font-weight: normal; }
-    ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-    li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .title { flex: 1 1 280px; font-weight: bold; }
-    .sys { color: var(--muted); font-weight: normal; margin-left: 6px; font-size: .9rem; }
-    .ver { color: var(--muted); font-size: .9rem; min-width: 150px; }
-    .links a { margin-left: 12px; }
-    .links a:first-child { margin-left: 0; }
-    @media (max-width: 600px) { .title { flex-basis: 100%; } .ver { min-width: 0; } }
+    main { width: min(960px, calc(100% - 32px)); margin: 0 auto; padding: 56px 0 64px; }
+    header { margin-bottom: 40px; }
+    h1 { margin: 0; font-size: 1.6rem; }
+    header p { margin: 6px 0 0; color: var(--muted); }
+    h2 { margin: 48px 0 14px; font-size: 1rem; color: var(--muted); font-weight: normal; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
     a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    .games { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 32px 24px; }
+    .game { display: flex; flex-direction: column; }
+    .shot { display: block; aspect-ratio: 8 / 7; background: var(--screen); border: 1px solid #000; overflow: hidden; }
+    .shot img { width: 100%; height: 100%; object-fit: contain; image-rendering: pixelated; display: block; }
+    .game h3 { margin: 12px 0 0; font-size: 1.05rem; }
+    .sys { display: inline-block; margin-left: 6px; padding: 0 5px; border: 1px solid var(--line); border-radius: 3px; color: var(--muted); font-size: .75rem; font-weight: normal; vertical-align: 2px; }
+    .desc { margin: 4px 0 0; font-size: .92rem; }
+    .meta { margin: 6px 0 0; color: var(--muted); font-size: .85rem; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+    .meta .links a + a { margin-left: 12px; }
+
+    ul.plain { list-style: none; margin: 0; padding: 0; }
+    ul.plain li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    ul.plain .title { flex: 1 1 280px; }
+    ul.plain .title b { font-weight: bold; }
+    ul.plain .title span.d { display: block; color: var(--muted); font-size: .9rem; }
+    ul.plain .ver { color: var(--muted); font-size: .85rem; }
+    ul.plain .links a + a { margin-left: 12px; }
+
+    footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    footer p { margin: 0 0 4px; }
   </style>
 </head>
 <body>
   <main>
-    <h1>voltage-gated</h1>
+    <header>
+      <h1>voltage-gated</h1>
+      <p>옛날 게임을 한국어로 옮기고, 하는 김에 조금씩 고쳐서 올립니다.</p>
+    </header>
 
     <h2>한글패치</h2>
-    <ul>
-      <li>
-        <span class="title">검용전설 야이바<span class="sys">SFC</span></span>
-        <span class="ver">MARK81 · 2026-11-25</span>
-        <span class="links"><a href="https://github.com/voltage-gated/yaiba-sfc">소개</a><a href="https://github.com/voltage-gated/yaiba-sfc/releases/latest">다운로드</a></span>
-      </li>
-      <li>
-        <span class="title">마이티 모핀 파워레인저: 파이팅 에디션<span class="sys">SNES</span></span>
-        <span class="ver">MARK5 · 2026-11-20</span>
-        <span class="links"><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes">소개</a><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes/releases/latest">다운로드</a></span>
-      </li>
-      <li>
-        <span class="title">원피스 그랜드배틀 스완 콜로세움<span class="sys">WSC</span></span>
-        <span class="ver">MARK106 · 2026-10-10</span>
-        <span class="links"><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc">소개</a><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc/releases/latest">다운로드</a></span>
-      </li>
-      <li>
-        <span class="title">B-WINGS<span class="sys">NES</span></span>
-        <span class="ver">MARK7 · 2026-10-01</span>
-        <span class="links"><a href="https://github.com/voltage-gated/b-wings-nes">소개</a><a href="https://github.com/voltage-gated/b-wings-nes/releases/latest">다운로드</a></span>
-      </li>
-      <li>
-        <span class="title">배틀시티<span class="sys">NES</span></span>
-        <span class="ver">MARK32 · 2026-09-09</span>
-        <span class="links"><a href="https://github.com/voltage-gated/battle-city-nes">소개</a><a href="https://github.com/voltage-gated/battle-city-nes/releases/latest">다운로드</a></span>
-      </li>
-      <li>
-        <span class="title">유유백서: 마강통일전<span class="sys">MD</span></span>
-        <span class="ver">MARK94 · 2026-08-26</span>
-        <span class="links"><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md">소개</a><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md/releases/latest">다운로드</a></span>
-      </li>
-    </ul>
+    <div class="games">
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/yaiba-sfc"><img src="img/yaiba-sfc-cover.png" alt="검용전설 야이바 한글 타이틀 화면" loading="lazy"></a>
+        <h3>검용전설 야이바<span class="sys">SFC</span></h3>
+        <p class="desc">대사부터 간판까지 한국어로. 쓸 수 없던 구슬 넷을 되살리고 용신구슬로 하늘을 날 수 있습니다.</p>
+        <p class="meta"><span>MARK81 · 2026-11-25</span><span class="links"><a href="https://github.com/voltage-gated/yaiba-sfc">소개</a><a href="https://github.com/voltage-gated/yaiba-sfc/releases/latest">다운로드</a></span></p>
+      </article>
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/mmpr-fighting-edition-snes"><img src="img/mmpr-fighting-edition-cover.png" alt="마이티 모핀 파워레인저 파이팅 에디션 한글 타이틀 화면" loading="lazy"></a>
+        <h3>마이티 모핀 파워레인저: 파이팅 에디션<span class="sys">SNES</span></h3>
+        <p class="desc">로고와 메뉴, 대전 화면을 한국어로. 기술표와 치트를 메뉴에서 바로 볼 수 있습니다.</p>
+        <p class="meta"><span>MARK5 · 2026-11-20</span><span class="links"><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes">소개</a><a href="https://github.com/voltage-gated/mmpr-fighting-edition-snes/releases/latest">다운로드</a></span></p>
+      </article>
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/one-piece-grand-battle-wsc"><img src="img/one-piece-cover.png" alt="원피스 그랜드배틀 스완 콜로세움 한글 타이틀 화면" loading="lazy"></a>
+        <h3>원피스 그랜드배틀 스완 콜로세움<span class="sys">WSC</span></h3>
+        <p class="desc">원더스완 컬러용 대전 액션 게임을 한국어로 즐길 수 있게 했습니다.</p>
+        <p class="meta"><span>MARK106 · 2026-10-10</span><span class="links"><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc">소개</a><a href="https://github.com/voltage-gated/one-piece-grand-battle-wsc/releases/latest">다운로드</a></span></p>
+      </article>
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/b-wings-nes"><img src="img/b-wings-cover.png" alt="B-WINGS 한글 타이틀 화면" loading="lazy"></a>
+        <h3>B-WINGS<span class="sys">NES</span></h3>
+        <p class="desc">메뉴와 스테이지 문구를 한국어로. 스테이지 선택과 날개를 마음대로 바꾸는 슈퍼모드를 넣었습니다.</p>
+        <p class="meta"><span>MARK7 · 2026-10-01</span><span class="links"><a href="https://github.com/voltage-gated/b-wings-nes">소개</a><a href="https://github.com/voltage-gated/b-wings-nes/releases/latest">다운로드</a></span></p>
+      </article>
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/battle-city-nes"><img src="img/battle-city-cover.png" alt="배틀시티 한글 타이틀 화면" loading="lazy"></a>
+        <h3>배틀시티<span class="sys">NES</span></h3>
+        <p class="desc">타이틀 로고와 화면 표시를 한국어로 바꾸고, 일부 조작키를 편하게 고쳤습니다.</p>
+        <p class="meta"><span>MARK32 · 2026-09-09</span><span class="links"><a href="https://github.com/voltage-gated/battle-city-nes">소개</a><a href="https://github.com/voltage-gated/battle-city-nes/releases/latest">다운로드</a></span></p>
+      </article>
+      <article class="game">
+        <a class="shot" href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md"><img src="img/yu-yu-hakusho-makyou-toitsusen-cover.png" alt="유유백서 마강통일전 한글 타이틀 화면" loading="lazy"></a>
+        <h3>유유백서: 마강통일전<span class="sys">MD</span></h3>
+        <p class="desc">메가드라이브용 대전 격투 게임을 한국어로 즐길 수 있게 했습니다.</p>
+        <p class="meta"><span>MARK94 · 2026-08-26</span><span class="links"><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md">소개</a><a href="https://github.com/voltage-gated/yu-yu-hakusho-makyou-md/releases/latest">다운로드</a></span></p>
+      </article>
+    </div>
 
     <h2>프로그램</h2>
-    <ul>
+    <ul class="plain">
       <li>
-        <span class="title">AI 사용량 위젯<span class="sys">Windows</span></span>
+        <span class="title"><b>AI 사용량 위젯</b><span class="sys">Windows</span><span class="d">작업표시줄에서 Codex·Claude 잔여 한도를 확인하는 위젯</span></span>
         <span class="ver">V5 · 2026-11-20</span>
         <span class="links"><a href="https://github.com/voltage-gated/ai-usage-widgets">소개</a><a href="https://github.com/voltage-gated/ai-usage-widgets/releases/latest">다운로드</a></span>
       </li>
     </ul>
+
+    <footer>
+      <p>한글패치는 직접 준비한 원본 ROM에 적용해 쓰는 비공식 팬 작업입니다. 원본 ROM과 패치를 적용한 ROM은 배포하지 않습니다.</p>
+      <p><a href="https://github.com/voltage-gated">GitHub</a></p>
+    </footer>
   </main>
 </body>
 </html>
